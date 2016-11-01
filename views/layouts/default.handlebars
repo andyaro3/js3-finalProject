@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HP: Ilvermorny School</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+
+        <div class="container">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Ilvermorny School of Witchcraft and Wizardry</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                {{#if user}}
+                    <li> <a href="/users/{{user.username}}"> Hello, {{user.username}} </a> </li>
+                    <li><a href="/logout">Log out</a></li>
+                {{else}}
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/register">Sign up</a></li>
+                {{/if}}
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+<!--         <p class="testing">[[UID]]: {{uid}} // does not work</p>
+        <p class="testing">[[REQ]]: {{REQ}} // does not work</p>
+        <p class="testing">[[User._id]]: {{user._id}} // DOES WORK!</p>
+        <p class="testing">[[User.password]]: {{user.password}} // does not work??</p> -->
+
+        {{{ body }}}
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
