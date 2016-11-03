@@ -2,11 +2,15 @@
 <h3>Gold: {{ user.money }}</h3>
 <p>{{user._id}}</p>
 
+{{#if user.wand.name}}
+ <h4>You can only have one wand! If you buy a new wand, your {{user.wand.name}}, with be lost.</h4>
+{{/if}}
+
 {{#if enoughMoney}}
 	<div class="panel panel-default">
 	  <form id="buyWand" class="panel-heading" action="/wandShop" method="post">
 	    <h3>Which wand would you like to buy?</h3>
-	      <input type="radio" name="pet" value="Ash and Phoenix Feather, 10 inches" required="required"> Ash and Phoenix Feather, 10 inches<br>
+	      <input type="radio" name="wood" value="Ash and Phoenix Feather, 10 inches" required="required"> Ash and Phoenix Feather, 10 inches<br>
 	      <input type="radio" name="wood" value="Cedar and Basilisk Horn, 11 inches" required="required"> Cedar and Basilisk Horn, 11 inches<br>
 	      <input type="radio" name="wood" value="Hawthorn and Unicorn Tail Hair, 10 inches" required="required"> Hawthorn and Unicorn Tail Hair, 10 inches<br>
 	      <input type="radio" name="wood" value="Walnut and Dragon Heartstrings, 12 inches" required="required"> Walnut and Dragon Heartstrings, 12 inches<br>

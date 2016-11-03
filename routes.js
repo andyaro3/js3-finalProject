@@ -40,7 +40,13 @@ router.post('/register', function( request, response ){ // matches register.hand
 	var userData = new User({
 		username: request.body.username,
 		house: request.body.house,
-		money: 300
+		money: 300,
+		wand: {
+			lastSpell: ""
+		},
+		appearance: {
+			gender: request.body.gender
+		}
 	})
 
 	var password = request.body.password
@@ -75,6 +81,11 @@ router.post('/login', passport.authenticate('local'), function( request, respons
 	// console.log("This is the ____ object: ")
 	// console.log(response)
 	// console.log(" END END RESPONSE")
+
+	User.findById(request.user._id, function ( err, userFound ){
+		userFound.wand.lastSpell = "" // reset
+		userFound.save() // save changes!
+	})
 
 	response.redirect('/profile')
 })
@@ -212,6 +223,63 @@ router.post('/petStore', function( request, response ){
 	response.redirect('/profile')
 })
 
+////////////////////////////////
+// BATTLE GAME
+router.get('/battle', function( request, response ){
+	response.render('battle', {user: request.user})
+})
+
+router.post('/battle', function( request, response ){
+	var spells = ['Aguamente', 'Incendio', 'Deprimo'] 
+	var computerNum = Math.floor(Math.random() * 3)
+	var userSpell = request.body.spell1
+
+	User.findById(request.user._id, function ( err, userFound ){ 
+
+		if ( spells[computerNum] == userSpell ){
+			console.log("it was tie")
+			userFound.wand.lastSpell = userSpell 
+			userFound.wand.lastResult = "it was a tie"
+		} else if ( spells[computerNum] == "Aguamente" ){
+			if ( userSpell == "Incendio") { // LOSS
+				console.log ("computer Aguamente beats user Incendio")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Aguamente beats user Incendio"
+			} else if ( userSpell == "Deprimo"){ // WIN
+				console.log("computer Aguamente was defeated by user Deprimo")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Aguamente was defeated by user Deprimo"
+				userFound.money = userFound.money + 50 // pay for the money
+			} // close inner IF
+		} else if ( spells[computerNum] == "Incendio" ){
+			if ( userSpell == "Deprimo" ){ // LOSS
+				console.log("computer Incendio beats user Deprimo")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Incendio beats user Deprimo"
+			} else if ( userSpell == "Aguamente" ){ // WIN
+				console.log("computer Incendio was defeated by user Aguamente")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Incendio was defeated by user Aguamente"
+				userFound.money = userFound.money + 50 // pay for the money
+			} // close inner IF
+		} else if ( spells[computerNum] == "Deprimo" ){
+			if ( userSpell == "Aguamente" ){ // LOSS
+				console.log("computer Deprimo beats user Aguamente")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Deprimo beats user Aguamente"
+			} else if ( userSpell == "Incendio"){ // WIN
+				console.log("computer Deprimo was defeated by user Incendio")
+				userFound.wand.lastSpell = userSpell 
+				userFound.wand.lastResult = "computer Deprimo was defeated by user Incendio"
+				userFound.money = userFound.money + 50 // pay for the money
+			} // close inner IF
+		} // close main IF
+
+		userFound.save() // save changes!
+	}) // close findById
+
+	response.redirect('/battle')
+}) // close battle POST
 
 ////////////////////////////////
 // EXPORT

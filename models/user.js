@@ -35,7 +35,9 @@ var User = new Schema({
 		strength: Number, // 1-10 powerful
 		speed: Number, // 1-10 fast
 		skill: Number, // 1-10 more complicated spells?
-		cost: Number
+		cost: Number, 
+		lastSpell: String, 
+		lastResult: String, 
 	}, 
 	pet: { // make own model?
 		name: String, 

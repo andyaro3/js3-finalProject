@@ -1,9 +1,11 @@
 <h1>Welcome {{ user.username }}!</h1>
 <h2>House: {{ user.house }}</h2>
 <h3>Gold: {{ user.money }}</h3>
+<h4>Gender: {{user.appearance.gender}}</h4>
 <h4>Joined on: {{user.createdAt}}</h4>
 <h4>Wand: {{user.wand.name}}</h4>
-<h4>Pet: {{user.pet.name}} the {{user.pet.animal}}</h4>
+<h4>Pet: {{#if user.pet.name}}  {{user.pet.name}} the {{user.pet.animal}} {{/if}}</h4>
+<h4>Last Spell?... {{user.wand.lastSpell}}</h4>
 <p>{{user._id}}</p>
 <form class="" action="/logout" method="post">
 	<button name="userDelete">Delete account</button>
@@ -11,3 +13,4 @@
 
 <a href='/wandShop'>Go to the Wand Shop</a>
 <a href='/petStore'>Go to the Pet Store</a>
+<a href='/battle'>Battle Wizards! (and earn money)</a>
