@@ -1,2 +1,8 @@
-<h1>{{ user.username }}</h1>
-<h2>Joined on {{user.createdAt}}</h2>
+<h1>Welcome {{ user.username }}!</h1>
+<h2>House: {{ user.house }}</h2>
+<h3>Gold: {{ user.money }}</h3>
+<h4>Joined on: {{user.createdAt}}</h4>
+<p>{{user._id}}</p>
+<form class="" action="/logout" method="post">
+	<button name="userDelete">Delete account</button>
+</form>
