@@ -1,11 +1,6 @@
 {
   "name": "passport-local-express4",
   "version": "0.0.0",
-  "engines": {
-    "node": "4.5.0",
-    "npm": "2.15.9"
-  },
-  "main": "index.js",
   "private": true,
   "license": "MIT",
   "dependencies": {
