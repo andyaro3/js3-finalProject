@@ -2,7 +2,12 @@
 <h2>House: {{ user.house }}</h2>
 <h3>Gold: {{ user.money }}</h3>
 <h4>Joined on: {{user.createdAt}}</h4>
+<h4>Wand: {{user.wand.name}}</h4>
+<h4>Pet: {{user.pet.name}} the {{user.pet.animal}}</h4>
 <p>{{user._id}}</p>
 <form class="" action="/logout" method="post">
 	<button name="userDelete">Delete account</button>
 </form>
+
+<a href='/wandShop'>Go to the Wand Shop</a>
+<a href='/petStore'>Go to the Pet Store</a>

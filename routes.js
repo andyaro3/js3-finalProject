@@ -79,7 +79,7 @@ router.post('/login', passport.authenticate('local'), function( request, respons
 	response.redirect('/profile')
 })
 
-// LOGOUT USER
+// LOGOUT USER, DELETE USER
 router.get('/logout', function( request, response ){
 	request.logout()
 	response.redirect('/')
@@ -158,6 +158,58 @@ router.get('/profile', function ( request, response ){
 	// response.render('survey', {user: request.user})
 	response.render('profile', {user: request.user})
 
+})
+
+
+////////////////////////////////
+// WAND SHOP
+router.get('/wandShop', function( request, response ){
+	var enoughMoney = Boolean
+	if ( request.user.money >= 150 ){ // handlbars IF can only take true or false statement
+		enoughMoney = true
+	} else {
+		enoughMoney = false
+	}
+	response.render('wandShop', {user: request.user, enoughMoney: enoughMoney}) // pass true or false
+})
+
+router.post('/wandShop', function( request, response ){
+	User.findById(request.user._id, function ( err, userFound ){
+		userFound.wand = { // add properties to user
+			name: request.body.wood,
+			cost: 150
+		}
+		userFound.money = userFound.money - 150 // pay for the money
+		userFound.save() // save changes!
+	})
+
+	response.redirect('/profile')
+})
+
+////////////////////////////////
+// PET STORE
+router.get('/petStore', function( request, response ){
+	var enoughMoney = Boolean
+	if ( request.user.money >= 100 ){ // handlbars IF can only take true or false statement
+		enoughMoney = true
+	} else {
+		enoughMoney = false
+	}
+	response.render('petStore', {user: request.user, enoughMoney: enoughMoney}) // pass true or false
+})
+
+router.post('/petStore', function( request, response ){
+	User.findById(request.user._id, function ( err, userFound ){
+		userFound.pet = { // add properties to user
+			name: request.body.petName,
+			animal: request.body.petAnimal,
+			cost: 100
+		}
+		userFound.money = userFound.money - 100 // pay for the money
+		userFound.save() // save changes!
+	})
+
+	response.redirect('/profile')
 })
 
 
