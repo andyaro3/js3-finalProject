@@ -74,10 +74,11 @@ app.use(function( request, response, next ) {
 
 })
 
-// 
+// LOCAL ONLY
 // app.listen(3000, function(){
 // 	console.log("hp final project up and running...")
 // })
+// REMOTE deployment
 app.listen( process.env.PORT || 3000, function() {
   console.log( "hp final project up and running..." )
 })
