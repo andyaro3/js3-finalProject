@@ -38,6 +38,11 @@ a {
   text-decoration: none;
 }
 
+.alertYellow {
+  color: hsla(59, 100%, 76%, 1); /*paleYellow*/
+  font-style: italic;
+}
+
 /*////////////////////
 /*INDEX.handlebars*/
 
@@ -315,4 +320,54 @@ input[type="text"] {
 .gold {
   color: hsla(40, 100%, 50%, 1); /*gold*/
 }
+
+/*////////////////////
+/*STORE petStore.handlebars & wandShop.handlebars*/
+
+#storePage {
+  margin: 20px;
+  width: 80%;
+  padding: 10px 20px;
+/*  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;*/
+  background-color: hsla(0, 0%, 0%, .6); /*black*/
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+}
+  #storePage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+  }
+
+.submitB {
+  background-color: hsla(0, 0%, 100%, 0); /*transparent*/
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  padding: 0 10px;
+  border: 2px solid hsla(0, 0%, 100%, 1); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+  font-size: 28px;
+  font-weight: bold;
+    transition: background-color 1s ease;   
+}
+  .submitB:hover {
+    background-color: hsla(0, 0%, 100%, .6); /*white*/
+  }
+
+.cancelB {
+  background-color: hsla(0, 0%, 100%, 0); /*transparent*/
+  font-family: 'Amatic SC', cursive;
+  margin: 20px 0 10px 6px;
+  padding: 0 10px;
+  border: 2px solid red;
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+    transition: background-color 1s ease;   
+}
+  .cancelB:hover {
+    background-color: hsla(0, 0%, 100%, .6); /*white*/
+  }
 

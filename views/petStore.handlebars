@@ -1,27 +1,30 @@
-<h1>Welcome {{ user.username }} to the PET STORE</h1>
-<h3>Gold: {{ user.money }}</h3>
-<p>{{user._id}}</p>
+<div id="storePage">
+	<h1>Welcome {{ user.username }} to the PET STORE</h1>
+	<h3 class="gold">Gold: {{ user.money }}</h3>
+	<!-- <p>{{user._id}}</p> -->
 
-{{#if user.pet.name}}
- <h4>You already have {{user.pet.name}} the {{user.pet.animal}}! If you buy a new pet, {{user.pet.name}} will be released.</h4>
-{{/if}}
+	{{#if user.pet.name}}
+		<h4 class="alertYellow">!!! You already have {{user.pet.name}} the {{user.pet.animal}}! If you buy a new pet, {{user.pet.name}} will be released.</h4>
+	{{/if}}
 
-{{#if enoughMoney}}
-	<div class="panel panel-default">
-	  <form id="buyPet" class="panel-heading" action="/petStore" method="post">
-	    <h3>Which animal would you like to have a pet?</h3>
-	      <input type="radio" name="petAnimal" value="Owl" required="required"> Owl<br>
-	      <input type="radio" name="petAnimal" value="Rabbit" required="required"> Rabbit<br>
-	      <input type="radio" name="petAnimal" value="Cat" required="required"> Cat<br>
-	      <input type="radio" name="petAnimal" value="Iguana" required="required"> Iguana<br>
+	{{#if enoughMoney}}
+		<br>
+		<div class="panel panel-default">
+		  <form id="buyPet" class="panel-heading" action="/petStore" method="post">
+		    <h3>Which animal would you like to have a pet?</h3>
+				<input type="radio" name="petAnimal" value="Owl" required="required"> Owl<br>
+				<input type="radio" name="petAnimal" value="Rabbit" required="required"> Rabbit<br>
+				<input type="radio" name="petAnimal" value="Cat" required="required"> Cat<br>
+				<input type="radio" name="petAnimal" value="Iguana" required="required"> Iguana<br>
 
-	      <input type="text" name="petName" placeholder="Enter your pet's name!" required="required">
+				<input type="text" name="petName" placeholder="Enter your pet's name!" required="required">
 
-	    <button class="btn btn-default" type="submit">Adopt for 100 gold</button>
-	  </form>
-	</div>
-{{else}}
-	<h4>You don't have enough money to adopt a pet :(</h4>
-{{/if}}
-	<a href="/profile">Back to your user profile</a>
+		    <button class="btn btn-default submitB" type="submit">Adopt for 100 gold</button>
+		  </form>
+		</div>
+	{{else}}
+		<h4>You don't have enough money to adopt a pet :(</h4>
+	{{/if}}
+		<a href="/profile" class="cancelB">Back to your user profile</a>
+</div>
 
