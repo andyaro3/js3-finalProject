@@ -6,6 +6,8 @@ $(document).ready(function(){
 
 	$("#loginPage").hide().fadeIn(2000) 
 
+	$("#registerPage").hide().fadeIn(2000) 
+
 });
 
 // // View

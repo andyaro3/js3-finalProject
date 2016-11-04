@@ -11,7 +11,7 @@ var User = new Schema({
 		type: Date, 
 		default: Date.now
 	}, 
-	house: Array, // order of their answers
+	house: String, // order of their answers
 	money: Number, // start with 300
 	appearance: { // make own model?
 		name: String, // maybe just use username

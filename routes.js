@@ -167,7 +167,27 @@ router.post('/survey', function( request, response ){ // checking information in
 // PROFILE
 router.get('/profile', function ( request, response ){
 	// response.render('survey', {user: request.user})
-	response.render('profile', {user: request.user})
+	var male = false
+	if (request.user.appearance.gender == "male"){
+		male = true
+	}
+	var female = false
+	if (request.user.appearance.gender == "female"){
+		female = true
+	}
+
+	var thunderbirdHouse, hornedSerpentHouse, pukwudgieHouse, wampusHouse = false
+	if ( request.user.house == 'thunderbird' ){
+		thunderbirdHouse = true
+	} else if ( request.user.house == 'hornedSerpent' ){
+		hornedSerpentHouse = true
+	} else if ( request.user.house == 'pukwudgie' ){
+		pukwudgieHouse = true
+	} else if ( request.user.house == 'wampus' ){
+		wampusHouse = true
+	}
+
+	response.render('profile', {user: request.user, maleAvatar: male, femaleAvatar: female, thunderbirdHouse: thunderbirdHouse, hornedSerpentHouse: hornedSerpentHouse, pukwudgieHouse: pukwudgieHouse, wampusHouse: wampusHouse})
 
 })
 

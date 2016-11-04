@@ -9,7 +9,7 @@
 {{#if enoughMoney}}
 	<div class="panel panel-default">
 	  <form id="buyPet" class="panel-heading" action="/petStore" method="post">
-	    <h3>Which wand would you like to buy?</h3>
+	    <h3>Which animal would you like to have a pet?</h3>
 	      <input type="radio" name="petAnimal" value="Owl" required="required"> Owl<br>
 	      <input type="radio" name="petAnimal" value="Rabbit" required="required"> Rabbit<br>
 	      <input type="radio" name="petAnimal" value="Cat" required="required"> Cat<br>
@@ -17,7 +17,7 @@
 
 	      <input type="text" name="petName" placeholder="Enter your pet's name!" required="required">
 
-	    <button class="btn btn-default" type="submit">Buy for 100 gold</button>
+	    <button class="btn btn-default" type="submit">Adopt for 100 gold</button>
 	  </form>
 	</div>
 {{else}}

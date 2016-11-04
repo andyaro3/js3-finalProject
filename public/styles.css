@@ -4,6 +4,7 @@ font-family: 'Yellowtail', cursive;
 font-family: 'EB Garamond', serif;
 
 COLORS
+hsla(40, 100%, 50%, 1) gold
 
 hsla(59, 100%, 76%, 1) paleYellow
 hsla(0, 0%, 100%, 1) white
@@ -128,13 +129,12 @@ a {
     font-size: 30px;
     margin: 10px 0 15px 0;
   }
-
-.panel {
+  #surveyPage h3 {
+    font-size: 24px;
+    margin-top: 10px;
 }
 
-h3 {
-  font-weight: bold;
-  margin-top: 10px;
+.panel {
 }
 
 .submit {
@@ -222,3 +222,97 @@ input[type="text"] {
   #registerPage input[type="radio"] {
     margin-bottom: 15px;
   }
+
+/*////////////////////
+/*PROFILE.handlebars*/
+
+#profilePage {
+  margin: 20px;
+  width: 80%;
+  padding: 10px 20px;
+  height: 235px;
+/*  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;*/
+  background-color: hsla(0, 0%, 0%, .6); /*black*/
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+}
+  #profilePage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+  }
+  #profilePage img {
+    height: 100px;
+    width: 100px;
+  }
+
+.col-1 {
+ float: left;
+ width: 30%;
+ padding-top: 5px;
+}
+  .col-1 p {
+    font-size: 12px;
+  }
+
+.col-2 {
+  margin-left: 5%;
+  float: left;
+  width: 65%;
+  font-size: 16px;
+}
+  .col-2 button {
+    font-size: 20px;
+    margin-left: 1px;
+  }
+
+.col-3 {
+  margin: 20px;
+  width: 92%;
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  height: 600px;
+  padding: 25px 10px 0 10px;
+/*  position: relative;
+  top: -280px;
+  padding-left: 50%;*/
+  text-align: center;
+}
+  .thunderbirdBkgd {
+    background: url('../images/houses/thunderbird/801126630.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .hornedSerpentBkgd {
+    background: url('../images/houses/hornedSerpent/snake-208585_960_720.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .pukwudgieBkgd {
+    background: url('../images/houses/pukwudgie/porcupine.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .wampusBkgd {
+    background: url('../images/houses/wampus/photo-1472496175377-b5d7625d4ba9.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .col-3 a {
+    background-color: hsla(0, 0%, 100%, 0); /*transparent*/
+    font-family: 'Amatic SC', cursive;
+    margin: 1000px 10px 100px 10px;
+    width: 100px;
+    border: 2px solid hsla(0, 0%, 100%, 1); /*white*/
+    color: hsla(0, 0%, 100%, 1); /*white*/
+    font-size: 28px;
+    font-weight: bold;
+    padding: 1px;
+      transition: background-color 1s ease;   
+  }
+    .col-3 a:hover {
+      background-color: hsla(0, 0%, 100%, .6); /*white*/
+    }
+
+.gold {
+  color: hsla(40, 100%, 50%, 1); /*gold*/
+}
+
