@@ -1,22 +1,23 @@
 var express = require('express')
 var hbs = require('express-handlebars')
 var mongoose = require('mongoose')
-// RUN mongod in CMD:  "C:\Program Files\MongoDB\Server\3.2\bin\mongod.exe"
 
-// REMOTE mongoose db // REMOTE HEROKU
+// REMOTE mongoose db // REMOTE HEROKU - uses remote database, cmd mongod.exe not needed
 // HEROKU: Created mongolab-tetrahedral-46998 as MONGODB_URI
 // HEROKU URI: MONGODB_URI: mongodb://heroku_0g72l7cg:cumf2najkembkfekimftjv7e2h@ds143767.mlab.com:43767/heroku_0g72l7cg
-var uristring = "mongodb://heroku_0g72l7cg:cumf2najkembkfekimftjv7e2h@ds143767.mlab.com:43767/heroku_0g72l7cg"
-	mongoose.connect(uristring, function (err, response) {
-		if (err) {
-			console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-		} else {
-			console.log ('Succeeded connected to: ' + uristring);
-		}
-	});
+// var uristring = "mongodb://heroku_0g72l7cg:cumf2najkembkfekimftjv7e2h@ds143767.mlab.com:43767/heroku_0g72l7cg"
+// 	mongoose.connect(uristring, function (err, response) {
+// 		if (err) {
+// 			console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+// 		} else {
+// 			console.log ('Succeeded connected to: ' + uristring);
+// 		}
+// 	});
 
 // LOCAL mongoose // LOCAL MACHINE
-// mongoose.connect('mongodb://localhost:27017/hp')
+// RUN mongod in CMD:  "C:\Program Files\MongoDB\Server\3.2\bin\mongod.exe"
+mongoose.connect('mongodb://localhost:27017/hp')
+
 
 // Apps to intregrate passport 
 var passport = require('passport')
@@ -26,6 +27,7 @@ var cookieParser = require('cookie-parser')
 
 var routes = require('./routes') // all Routes!
 var app = express()
+app.use(express.static("public")) // calling in stylesheet and frontend js
 
 // Configuration
 app.engine('handlebars', hbs({defaultLayout: 'default'}))

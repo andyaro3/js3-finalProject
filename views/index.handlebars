@@ -1,16 +1,18 @@
-<h1>Welcome to the Ilvermorny School of Witchcraft and Wizardry</h1>
+<div id="adminPage">
+  <h1>Admin Panel: index.handlebars</h1>
 
-{{#each users}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <a href="/profile/?username={{username}}">
-        {{username}} - {{_id}}
-      </a>
-    </div>
-    {{#if bio}}
-      <div class="panel-body">
-        {{bio}}
+  {{#each users}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="/profile/?username={{username}}">
+          {{username}} - {{_id}}
+        </a>
       </div>
-    {{/if}}
-  </div>
-{{/each}}
+      {{#if bio}}
+        <div class="panel-body">
+          {{bio}}
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

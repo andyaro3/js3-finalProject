@@ -1,0 +1,224 @@
+/*FONTS
+font-family: 'Amatic SC', cursive;
+font-family: 'Yellowtail', cursive;
+font-family: 'EB Garamond', serif;
+
+COLORS
+
+hsla(59, 100%, 76%, 1) paleYellow
+hsla(0, 0%, 100%, 1) white
+hsla(0, 0%, 0%, 1) black
+*/
+
+/* Clear fix hack */
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+/*  background-color: lightblue;*/
+  background: url('../images/castle/photo-1451055959797-14c0cfba1a43.jpg') no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*////////////////////
+/*INDEX.handlebars*/
+
+#adminPage {
+  margin: 20px;
+  padding: 10px 20px;
+/*  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;*/
+/*  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+/*  color: hsla(0, 0%, 100%, 1); /*white*/
+}
+  #adminPage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 10px 0 15px 0;
+  }
+  #adminPage .panel-heading {
+    border-radius: 5px;
+    border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+    height: 30px;
+    background-color: hsla(0, 0%, 0%, .6); /*black*/
+  }
+  #adminPage a {
+    color: hsla(0, 0%, 100%, 1); /*white*/;
+  }
+
+/*////////////////////
+/*DEFAULT.handlebars*/
+
+.schoolName {
+  font-family: 'Amatic SC', cursive;
+  font-size: 44px;
+  color: black;
+/*  font-weight: bold;
+    transition: font-weight 1.5s ease;  */
+}
+
+.navbar {
+  width: 99%;
+  height: 54px;
+  background-color: hsla(0, 0%, 100%, .6); /*white*/
+  margin: 0 0 20px 0;
+  padding-left: 1%;
+}
+  .navbar-right {
+    float: right;
+    margin: -56px 0 0 0;
+  }
+  .navbar ul li {
+    display: inline;
+    padding: 12px;
+    border-left: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+    font-family: 'Amatic SC', cursive;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+      transition: background-color 1s ease;   
+  }
+    .navbar ul li:hover {
+        background-color: hsla(0, 0%, 100%, 1); /*white*/
+      }
+  .navbar a {
+    color: hsla(0, 0%, 0%, 1); /*black*/
+  }
+
+/*////////////////////
+/*SURVEY.handlebars*/
+
+.greeting {
+  margin: 20px;
+}
+
+#surveyPage {
+  width: 60%;
+  margin: 0 20%;
+  padding: 10px 20px;
+  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+}
+  #surveyPage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 10px 0 15px 0;
+  }
+
+.panel {
+}
+
+h3 {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.submit {
+  background-color: hsla(0, 0%, 100%, 0); /*transparent*/
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  width: 100px;
+  border: 2px solid hsla(0, 0%, 100%, 1); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+  font-size: 28px;
+  font-weight: bold;
+    transition: background-color 1s ease;   
+}
+  .submit:hover {
+    background-color: hsla(0, 0%, 100%, .6); /*white*/
+  }
+
+/*////////////////////
+/*LOGIN.handlebars*/
+
+#loginPage {
+  width: 60%;
+  margin: 0 20%;
+  padding: 10px 20px;
+/*  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;*/
+  background-color: hsla(0, 0%, 0%, .6); /*black*/
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+  text-align: center;
+}
+  #loginPage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+  }
+
+.cancel {
+  background-color: hsla(0, 0%, 100%, 0); /*transparent*/
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  width: 100px;
+  border: 2px solid red;
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+    transition: background-color 1s ease;   
+}
+  .cancel:hover {
+    background-color: hsla(0, 0%, 100%, .6); /*white*/
+  }
+
+input[type="text"] {
+  color: hsla(0, 0%, 0%, 1); /*black*/
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 210px;
+}
+  input[type="text"]:focus {
+    background-color: hsla(59, 100%, 76%, 1); /*paleYellow*/
+  }
+
+/*////////////////////
+/*REGISTER.handlebars*/
+
+#registerPage {
+  width: 60%;
+  margin: 0 20%;
+  padding: 10px 20px;
+/*  background: url('../images/photo-1472865804976-0f613072a495.jpg') no-repeat center center;
+  background-size: cover;*/
+  background-color: hsla(0, 0%, 0%, .6); /*black*/
+  border-radius: 25px;
+  border: 2px solid hsla(0, 0%, 100%, .6); /*white*/
+  color: hsla(0, 0%, 100%, 1); /*white*/
+  text-align: center;
+}
+  #registerPage h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+  }
+  #registerPage input[type="radio"] {
+    margin-bottom: 15px;
+  }

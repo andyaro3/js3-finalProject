@@ -1,36 +1,38 @@
-<div class="container">
+<div id="registerPage">
+  <div class="container">
 
-  <h1>Sign Up</h1>
-  <p class="lead">Register</p> <br>
+    <h1>Now SIGN UP to attend ISoWaW!</h1>
+    <!-- <p class="lead">Register</p> <br> -->
 
-  {{#if err}}
-    {{err}}
-  {{/if}}
+    {{#if err}}
+      {{err}}
+    {{/if}}
 
-  <form class="" action="/register" method="post">
+    <form class="" action="/register" method="post">
 
-    <div class="form-group">
-      <input type="text" class="form-control" name="username" placeholder="Enter username" required="required">
-    </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Enter username" required="required">
+      </div>
 
-    <div class="form-group">
-      <input type="text" class="form-control" name="password" placeholder="Password" required="required">
-    </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+      </div>
 
-    <div class="form-group">
-      <input type="radio" name="gender" value="male" required="required"> Male &nbsp; &nbsp; &nbsp;
-      <input type="radio" name="gender" value="female" required="required"> Female
-    </div>
+      <div class="form-group">
+        <input type="radio" name="gender" value="male" required="required"> Male &nbsp; &nbsp; &nbsp;
+        <input type="radio" name="gender" value="female" required="required"> Female
+      </div>
 
-    <div class="form-group">
-      <input type="text" class="form-control" name="house" value={{house}} readonly>
-    </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="house" value={{house}} readonly>
+      </div>
 
-    <button class="btn btn-default" type="submit">Submit</button>
-    <a href="/">
-      <button class="btn btn-primary" type="button">Cancel</button>
-    </a>
+      <button class="btn btn-default submit" type="submit">Submit</button>
+      <a href="/">
+        <button class="btn btn-primary cancel" type="button">Cancel</button>
+      </a>
 
-  </form>
+    </form>
 
+  </div>
 </div>

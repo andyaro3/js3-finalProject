@@ -3,30 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>HP: Ilvermorny School</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
   </head>
+
   <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-
+    <div class="navbar navbar-default navbar-static-top clearfix" role="navigation">
         <div class="container">
-
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Ilvermorny School of Witchcraft and Wizardry</a>
+                <a class="navbar-brand schoolName" href="/">Ilvermorny School of Witchcraft and Wizardry</a>
             </div>
 
             <ul class="nav navbar-nav navbar-right">
                 {{#if user}}
-                    <li> <a href="/profile/?user={{user.username}}"> Hello, {{user.username}} </a> </li>
+                    <li><a href="/profile/?user={{user.username}}"> Hello, {{user.username}} </a> </li>
                     <li><a href="/logout">Log out</a></li>
                 {{else}}
                     <li><a href="/login">Log in</a></li>
                     <!-- <li><a href="/register">Sign up</a></li> -->
                 {{/if}}
             </ul>
-
         </div>
-
     </div>
 
     <div class="container">
@@ -40,6 +42,7 @@
     </div>
 
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> --> <!-- BOOTSTRAP -->
+    <script src="/main.js"></script>
   </body>
 </html>
