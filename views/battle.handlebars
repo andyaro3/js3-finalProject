@@ -1,25 +1,28 @@
-<h1>{{ user.username }}, prepare to BATTLE!</h1>
-<h3>Gold: {{ user.money }}</h3>
-<p>{{user._id}}</p>
+<div id="storePage"> <!-- # battlePage -->
+	<h1>{{ user.username }}, prepare to BATTLE!</h1>
+	<h3 class="gold">Gold: {{ user.money }}</h3>
+	<!-- <p>{{user._id}}</p> -->
 
-{{#if user.wand.lastSpell}}
-	<h4>{{user.wand.lastResult}}! Play Again?</h4>
-{{/if}}
+	{{#if user.wand.lastSpell}}
+		<h4 class="alertYellow">{{user.wand.lastResult}} Play Again?</h4>
+	{{/if}}
 
-	<div class="panel panel-default">
-	  <form id="battleSpell" class="panel-heading" action="/battle" method="post">
-	    <h3>Which spell would you like to cast?</h3>
-	      <input type="radio" name="spell1" value="Aguamente" required="Aguamente"> Aguamente (Water)<br>
-	      <input type="radio" name="spell1" value="Incendio" required="Incendio"> Incendio (Fire)<br>
-	      <input type="radio" name="spell1" value="Deprimo" required="Deprimo"> Deprimo (Wind)<br>
+		<div class="panel panel-default">
+		  <form id="battleSpell" class="panel-heading" action="/battle" method="post">
+		    <h3>Which spell would you like to cast?</h3>
+		      <input type="radio" name="spell1" value="Aguamente" required="Aguamente" id="spellA"> Aguamente (Water)<br>
+		      <input type="radio" name="spell1" value="Incendio" required="Incendio" id="spellB"> Incendio (Fire)<br>
+		      <input type="radio" name="spell1" value="Deprimo" required="Deprimo" id="spellC"> Deprimo (Wind)<br>
 
-	      <!-- <input type="radio" name="spell1" value="Aguamente" required="Rictusempra"> Rictusempra <br>
-	      <input type="radio" name="spell1" value="Incendio" required="Stupefy"> Stupefy<br>
-	      <input type="radio" name="spell1" value="Deprimo" required="Levicorpus"> Levicorpus<br> -->
+		      <!-- <input type="radio" name="spell1" value="Aguamente" required="Rictusempra"> Rictusempra <br>
+		      <input type="radio" name="spell1" value="Incendio" required="Stupefy"> Stupefy<br>
+		      <input type="radio" name="spell1" value="Deprimo" required="Levicorpus"> Levicorpus<br> -->
+		      <!-- <img id="spellBattle" style="background-image: url(/images/spells/aguamente.jpg)">
+ -->	
+ 			<img id="spellBattle">
+		    <button class="btn btn-default submitB" type="submit">Cast Spell!</button>
+		  </form>
+		</div>
 
-	    <button class="btn btn-default" type="submit">Cast Spell!</button>
-	  </form>
-	</div>
-
-	<a href="/profile">Back to your user profile</a>
-
+		<a href="/profile" class="cancelB">Back to your user profile</a>
+</div>

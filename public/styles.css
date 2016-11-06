@@ -286,19 +286,19 @@ input[type="text"] {
   text-align: center;
 }
   .thunderbirdBkgd {
-    background: url('../images/houses/thunderbird/801126630.jpg') no-repeat center center;
+    background: url('../images/houses/thunderbird.jpg') no-repeat center center;
     background-size: cover;
   }
   .hornedSerpentBkgd {
-    background: url('../images/houses/hornedSerpent/snake-208585_960_720.jpg') no-repeat center center;
+    background: url('../images/houses/hornedSerpent.jpg') no-repeat center center;
     background-size: cover;
   }
   .pukwudgieBkgd {
-    background: url('../images/houses/pukwudgie/porcupine.jpg') no-repeat center center;
+    background: url('../images/houses/pukwudgie.jpg') no-repeat center center;
     background-size: cover;
   }
   .wampusBkgd {
-    background: url('../images/houses/wampus/photo-1472496175377-b5d7625d4ba9.jpg') no-repeat center center;
+    background: url('../images/houses/wampus.jpg') no-repeat center center;
     background-size: cover;
   }
   .col-3 a {
@@ -371,3 +371,12 @@ input[type="text"] {
     background-color: hsla(0, 0%, 100%, .6); /*white*/
   }
 
+#spellBattle {
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  float: right;
+  margin: -100px 10% 0 0;
+  background-size: cover;
+  background-position: center center;
+}

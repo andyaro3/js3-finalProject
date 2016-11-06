@@ -259,38 +259,38 @@ router.post('/battle', function( request, response ){
 		if ( spells[computerNum] == userSpell ){
 			console.log("it was tie")
 			userFound.wand.lastSpell = userSpell 
-			userFound.wand.lastResult = "it was a tie"
+			userFound.wand.lastResult = "It was a tie... "
 		} else if ( spells[computerNum] == "Aguamente" ){
 			if ( userSpell == "Incendio") { // LOSS
 				console.log ("computer Aguamente beats user Incendio")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Aguamente beats user Incendio"
+				userFound.wand.lastResult = "computer Aguamente beats user Incendio. "
 			} else if ( userSpell == "Deprimo"){ // WIN
 				console.log("computer Aguamente was defeated by user Deprimo")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Aguamente was defeated by user Deprimo"
+				userFound.wand.lastResult = "computer Aguamente was defeated by user Deprimo. "
 				userFound.money = userFound.money + 50 // pay for the money
 			} // close inner IF
 		} else if ( spells[computerNum] == "Incendio" ){
 			if ( userSpell == "Deprimo" ){ // LOSS
 				console.log("computer Incendio beats user Deprimo")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Incendio beats user Deprimo"
+				userFound.wand.lastResult = "computer Incendio beats user Deprimo. "
 			} else if ( userSpell == "Aguamente" ){ // WIN
 				console.log("computer Incendio was defeated by user Aguamente")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Incendio was defeated by user Aguamente"
+				userFound.wand.lastResult = "computer Incendio was defeated by user Aguamente. "
 				userFound.money = userFound.money + 50 // pay for the money
 			} // close inner IF
 		} else if ( spells[computerNum] == "Deprimo" ){
 			if ( userSpell == "Aguamente" ){ // LOSS
 				console.log("computer Deprimo beats user Aguamente")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Deprimo beats user Aguamente"
+				userFound.wand.lastResult = "computer Deprimo beats user Aguamente. "
 			} else if ( userSpell == "Incendio"){ // WIN
 				console.log("computer Deprimo was defeated by user Incendio")
 				userFound.wand.lastSpell = userSpell 
-				userFound.wand.lastResult = "computer Deprimo was defeated by user Incendio"
+				userFound.wand.lastResult = "computer Deprimo was defeated by user Incendio. "
 				userFound.money = userFound.money + 50 // pay for the money
 			} // close inner IF
 		} // close main IF

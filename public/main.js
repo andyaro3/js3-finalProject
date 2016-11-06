@@ -8,6 +8,38 @@ $(document).ready(function(){
 
 	$("#registerPage").hide().fadeIn(2000) 
 
+	// function changeBackground( background ){
+	// 	// console.log( background )
+	// 	var URL
+	//     if( background=="Aguamente" ){
+	//         url="/images/spells/aguamente.jpg"
+	//    		document.getElementById("spellBattle").style.backgroundImage = "url(" + URL + ")"
+	//    		console.log("bg aguamente") 
+	//     } else if( background=="Incendio" ){ 
+	//     	url="../images/spells/incendio.jpg"
+	//     	document.getElementById("spellBattle").style.backgroundImage = "url(" + URL + ")"
+	//     	console.log("bg incendio")         
+	//     } else if( background=="Deprimo" ){ 
+	//     	url="/images/spells/deprimo.jpg"
+	//     	document.getElementById("spellBattle").style.backgroundImage = "url(" + URL + ")"
+	//     	console.log("bg deprimo")        
+	//     }
+	// } // style="background-image: url(/images/spells/aguamente.jpg)">
+	// $("#spellC").click(changeBackground)
+	$("#spellA").click(function(){
+		document.getElementById("spellBattle").style.backgroundImage = "url('/images/spells/aguamente.jpg')"
+	})
+
+	$("#spellB").click(function(){
+		document.getElementById("spellBattle").style.backgroundImage = "url('/images/spells/incendio.jpg')"
+	})
+
+	$("#spellC").click(function(){
+		document.getElementById("spellBattle").style.backgroundImage = "url('/images/spells/deprimo.jpg')"
+	})
+
+	
+		
 });
 
 // // View
