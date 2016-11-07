@@ -27,6 +27,11 @@ router.get('/admin', function( request, response ){
 	})
 })
 
+router.post('/admin', function( request, response ){
+	var userId = request.body.userId
+	console.log( userId)
+})
+
 ////////////////////////////////
 // CREATING A NEW USER
 router.get('/register', function( request, response ){
@@ -90,6 +95,7 @@ router.post('/login', passport.authenticate('local'), function( request, respons
 	response.redirect('/profile')
 })
 
+////////////////////////////////
 // LOGOUT USER, DELETE USER
 router.get('/logout', function( request, response ){
 	request.logout()
@@ -119,7 +125,6 @@ router.post('/survey', function( request, response ){ // checking information in
 	// User.find( {}, function( err, data ){
 	// 	response.render('profile', { user: request.user, users: data, uid: request._id, REQ: request, PW: request.password }) // user: is in default.handlebars, users: is in index.handlebars
 	// })
-
 })
 
 	function whichHouse( object ){
@@ -188,9 +193,7 @@ router.get('/profile', function ( request, response ){
 	}
 
 	response.render('profile', {user: request.user, maleAvatar: male, femaleAvatar: female, thunderbirdHouse: thunderbirdHouse, hornedSerpentHouse: hornedSerpentHouse, pukwudgieHouse: pukwudgieHouse, wampusHouse: wampusHouse})
-
 })
-
 
 ////////////////////////////////
 // WAND SHOP

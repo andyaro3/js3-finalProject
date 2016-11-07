@@ -4,15 +4,22 @@
   {{#each users}}
     <div class="panel panel-default">
       <div class="panel-heading">
-        <a href="/profile/?username={{username}}">
+        <!-- <a href="/admin" value={{_id}} action="/admin" method="post"> -->
+        <!-- <a href="/profile/?username={{username}}"> -->
+
+        <a href="#" value={{_id}} action="/admin" method="post">
           {{username}} - {{_id}}
         </a>
+<!--         <form class="" action="/logout" method="post">
+      <button name="userDelete" class="cancel userDelete">Delete account</button>
+    </form> -->
+
+<!--         <form id="myform" method="post" action="/admin">
+          <input type="hidden" name="userId" value="{{_id}}" /> 
+          <a onclick="document.getElementById('myform').submit();">{{username}} - {{_id}}</a>
+        </form> -->
+
       </div>
-      {{#if bio}}
-        <div class="panel-body">
-          {{bio}}
-        </div>
-      {{/if}}
     </div>
   {{/each}}
 </div>
